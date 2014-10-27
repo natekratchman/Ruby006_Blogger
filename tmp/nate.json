@@ -1,0 +1,32 @@
+{
+  "name": "nate_blog",
+  "count": 2,
+  "frequency": "On demand",
+  "version": 2,
+  "newdata": false,
+  "lastrunstatus": "success",
+  "thisversionrun": "Mon Oct 27 2014 01:42:08 GMT+0000 (UTC)",
+  "lastsuccess": "Mon Oct 27 2014 01:42:08 GMT+0000 (UTC)",
+  "results": {
+    "entries": [
+      {
+        "entry_header": {
+          "text": "Bash Hacks for the Lazy Programmer",
+          "href": "http://natekratchman.github.io/blog/bash-hacks-for-the-lazy-programmer/"
+        },
+        "entry_month": "Oct",
+        "entry_day": "12",
+        "entry_year": "2014"
+      },
+      {
+        "entry_header": {
+          "text": "Hello World",
+          "href": "http://natekratchman.github.io/blog/hello-world/"
+        },
+        "entry_month": "Oct",
+        "entry_day": "06",
+        "entry_year": "2014"
+      }
+    ]
+  }
+}

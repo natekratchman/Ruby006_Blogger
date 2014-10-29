@@ -1,27 +1,24 @@
 class BlogParser
 
   def self.call
-    # Entry.destroy_all
-
-    RSS_URLS.each do |author, hash|
+    RSS_URLS.each do |author, author_hash|
       Author.create(name: author) if Author.find_by(name: author).nil?
       
-      blog_url = hash["url"]
-      blog_platform = hash["platform"]
+      blog_url = author_hash["url"]
+      blog_platform = author_hash["platform"]
 
       if blog_platform == "home"
         self.create_home_entries(author, blog_url)
       else
-        noko_hash = self.get_hash(blog_url) 
-        self.create_entries(author, noko_hash, blog_platform)
+        rss_hash = self.get_hash(blog_url) 
+        self.create_entries(author, rss_hash, blog_platform)
       end
     end
   end
 
-  def self.get_hash(url)
+  def self.get_hash(blog_url)
     # noko_hash = Hash.from_xml(Nokogiri::XML(open(url)).to_s)
-    hash = RSS::Parser.parse(url)
-    binding.pry####!!!!!!!!!!!!!!####
+    rss_hash = RSS::Parser.parse(blog_url)
   end
 
   def self.create_home_entries(author, blog_url)
@@ -41,52 +38,30 @@ class BlogParser
     end
   end
 
-  def self.create_entries(author, noko_hash, blog_platform)
-    if blog_platform == "github"
-      if !noko_hash.nil? && !noko_hash["feed"].nil? && !noko_hash["feed"]["entry"].nil?
-        noko_hash["feed"].each do |k,v|
-          if k == "entry"
-            if v.class == Array
-              v.each do |entry_hash|
-                entry_url = entry_hash["link"]["href"]
-                if Entry.find_by(url: entry_url).nil?
-                  entry_title = entry_hash["title"]
-                  date = entry_hash["updated"]
-                  entry_date = date.to_date #converts to DateTime
-                  author_id = Author.find_by(name: author).id
-                  Entry.create(title: entry_title, url: entry_url, date: entry_date, author_id: author_id)
-                else 
-                  next
-                end
-              end
-            elsif v.class == Hash 
-              entry_url = v["link"]["href"]
-              if Entry.find_by(url: entry_url).nil?
-                entry_title = v["title"]
-                date = v["updated"]
-                entry_date = date.to_date #converts to DateTime
-                author_id = Author.find_by(name: author).id
-                Entry.create(title: entry_title, url: entry_url, date: entry_date, author_id: author_id)
-              else 
-                next
-              end
-            end
-          end
+  def self.create_entries(author, rss_hash, blog_platform)
+    case blog_platform
+    when "github" 
+      rss_hash.entries.each do |entry|
+        entry_url = entry.link.href
+        if Entry.find_by(url: entry_url).nil?
+          entry_title = entry.title.content
+          entry_date = entry.updated.content
+          author_id = Author.find_by(name: author).id
+          Entry.create(title: entry_title, url: entry_url, date: entry_date, author_id: author_id)
+        else
+          next
         end
       end
-    
-    elsif blog_platform == "ghost"
-      if !noko_hash.nil? && !noko_hash["rss"].nil? && !noko_hash["rss"]["channel"].nil? && !noko_hash["rss"]["channel"]["item"].nil?
-        noko_hash["rss"]["channel"]["item"].each do |entry_hash|
-          entry_url = entry_hash["link"]
-          if Entry.find_by(url: entry_url).nil?
-            entry_title = entry_hash["title"]
-            entry_date = entry_hash["pubDate"]
-            author_id = Author.find_by(name: author).id
-            Entry.create(title: entry_title, url: entry_url, date: entry_date, author_id: author_id)
-          else
-            next
-          end
+    when "ghost"
+      rss_hash.items.each do |entry|
+        entry_url = entry.link
+        if Entry.find_by(url: entry_url).nil?
+          entry_title = entry.title
+          entry_date = entry.pubDate
+          author_id = Author.find_by(name: author).id
+          Entry.create(title: entry_title, url: entry_url, date: entry_date, author_id: author_id)
+        else
+          next
         end
       end
     end

@@ -4,7 +4,6 @@ require 'net/http'
 require 'bundler/setup'
 require 'date'
 require 'open-uri'
-require 'active_support/core_ext/hash/conversions' #convert nokogiri to hash
 require 'rss'
 
 Bundler.require(:default, ENV['SINATRA_ENV'])

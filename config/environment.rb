@@ -1,7 +1,12 @@
 ENV['SINATRA_ENV'] ||= "development"
 
+require 'net/http'
 require 'bundler/setup'
 require 'date'
+require 'open-uri'
+require 'active_support/core_ext/hash/conversions' #convert nokogiri to hash
+require 'rss'
+
 Bundler.require(:default, ENV['SINATRA_ENV'])
 
 ActiveRecord::Base.establish_connection(
@@ -11,4 +16,3 @@ ActiveRecord::Base.establish_connection(
 
 require_all 'app'
 require_all 'lib'
-# require_all 'tmp'

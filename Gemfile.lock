@@ -22,8 +22,10 @@ GEM
     i18n (0.6.11)
     json (1.8.1)
     method_source (0.8.2)
+    mini_portile (0.6.0)
     minitest (5.4.2)
-    netrc (0.7.7)
+    nokogiri (1.6.3.1)
+      mini_portile (= 0.6.0)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -33,8 +35,6 @@ GEM
       rack
     rake (10.3.2)
     require_all (1.3.2)
-    rest_client (1.7.3)
-      netrc (~> 0.7.7)
     shotgun (0.9)
       rack (>= 1.0)
     sinatra (1.4.5)
@@ -61,10 +61,10 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   json
+  nokogiri
   pry
   rake
   require_all
-  rest_client
   shotgun
   sinatra
   sinatra-activerecord

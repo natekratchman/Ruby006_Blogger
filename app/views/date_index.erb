@@ -1,7 +1,7 @@
 <a href="/">Home</a><br>
 <h1>Ruby006 Blogger</h1>
-<label>Manually fetch new blogs if posts are missing:</label><form action="/Ruby006_Blogger/all" method="post">
-  <input type="submit" value="fetch new blogs"></form>
+<label>Last Updated: <%= Update.last.update_time.getlocal %></label><form action="/Ruby006_Blogger/all" method="post">
+  <input type="submit" value="fetch new posts"></form>
 
 <% while @day > @first_day do %>
   <h3><%= @day.strftime('%a %b %dth, %Y') %></h3>

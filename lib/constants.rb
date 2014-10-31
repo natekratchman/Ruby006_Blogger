@@ -29,13 +29,13 @@
   "Sofia Ma" => { "url" => "https://eatsleepcoderepeat.ghost.io/rss/", "platform" => "ghost" },
   "Blake Deboer" => { "url" => "https://blakedeboer.ghost.io/author/blake-deboer/rss/", "platform" => "ghost" },
   "Shivani Tiwari" => { "url" => "http://shivanipandey87.ghost.io/rss/", "platform" => "ghost" },
-  "Sam Tran" => { "url" => "https://samvantran.github.io/feed.xml", "platform" => "home" },
-  "Molly Gingras" => { "url" => "http://molgin.github.io/", "platform" => "home" },
-  "Jimmy Kuruvilla" => { "url" => "http://jimmykuruvilla.github.io/atom.xml", "platform" => "home" },
+  "Sam Tran" => { "url" => "https://samvantran.github.io", "platform" => "home" },
+  "Molly Gingras" => { "url" => "http://molgin.github.io", "platform" => "home" },
+  "Jimmy Kuruvilla" => { "url" => "http://jimmykuruvilla.github.io", "platform" => "home" },
   "Seema Shariat" => { "url" => "http://seemajune.github.io/chunkybacon.chomp-/", "platform" => "home" },
   "Rodrigo Figueroa" => { "url" => "http://rodrigo-figueroa.bitballoon.com/2014", "platform" => "home" },
   "Ayanthika Motha" => { "url" => "http://sincerelymaryse.tumblr.com/", "platform" => "home" },
-  "Amanda Chang" => { "url" => "http://computerwalksintobar.com/?feed=rss2", "platform" => "home" }
+  "Amanda Chang" => { "url" => "http://computerwalksintobar.com", "platform" => "home" }
   }
 
   NOT_SETUP = 

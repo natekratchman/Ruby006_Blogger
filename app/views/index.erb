@@ -1,4 +1,6 @@
 <h1>Ruby006 Blogger</h1>
+<label>Last Updated: <%= Update.last.update_time.getlocal %></label><form action="/Ruby006_Blogger" method="post">
+  <input type="submit" value="fetch new posts"></form>
 
 <h3>Today - <%= Date.today.strftime('%a %b %dth, %Y') %></h3>
 <ol>

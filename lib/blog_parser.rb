@@ -1,6 +1,6 @@
 class BlogParser
 
-  def self.call
+  def self.call(day = nil)
     RSS_URLS.each do |author, author_hash|
       Author.create(name: author) if Author.find_by(name: author).nil?
       
@@ -17,7 +17,6 @@ class BlogParser
   end
 
   def self.get_hash(blog_url)
-    # noko_hash = Hash.from_xml(Nokogiri::XML(open(url)).to_s)
     rss_hash = RSS::Parser.parse(blog_url)
   end
 

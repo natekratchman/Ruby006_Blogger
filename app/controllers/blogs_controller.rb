@@ -21,7 +21,14 @@ class BlogsController < ApplicationController
 
   post '/Ruby006_Blogger/all' do
     BlogParser.call
+    Update.create(update_time: Time.now)
     redirect "/Ruby006_Blogger/all"
+  end
+
+  post '/Ruby006_Blogger' do
+    BlogParser.call
+    Update.create(update_time: Time.now)
+    redirect "/Ruby006_Blogger"
   end
 
   post '/Ruby006_Blogger/author' do

@@ -6,8 +6,6 @@ require 'date'
 require 'open-uri'
 require 'rss'
 
-require_all 'app'
-require_all 'lib'
 
 Bundler.require(:default, ENV['SINATRA_ENV'])
 
@@ -32,3 +30,6 @@ configure :production do
    :encoding => 'utf8'
  )
 end
+
+require_all 'app'
+require_all 'lib'

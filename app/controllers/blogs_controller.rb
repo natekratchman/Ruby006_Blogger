@@ -1,10 +1,6 @@
 class BlogsController < ApplicationController
   
-  get '/' do
-    redirect "/Ruby006_Blogger"
-  end
-
-  get '/Ruby006_Blogger' do 
+  get '/' do 
     @entries = Entry.all.where("name is not null")
     @authors = Author.all
     @todays_authors = BLOG_SCHEDULE[Date.today.strftime('%m/%d/%Y')]
@@ -12,36 +8,36 @@ class BlogsController < ApplicationController
     erb :"/index"
   end
 
-  get '/Ruby006_Blogger/all' do
+  get '/all' do
     @entries = Entry.all
     @day = Date.today
     @first_day = Date.parse('2014-10-05')
     erb :"/date_index"
   end
 
-  post '/Ruby006_Blogger/all' do
+  post '/all' do
     BlogParser.call
     Update.create(update_time: Time.now)
-    redirect "/Ruby006_Blogger/all"
+    redirect "/all"
   end
 
-  post '/Ruby006_Blogger' do
+  post '/' do
     BlogParser.call
     Update.create(update_time: Time.now)
-    redirect "/Ruby006_Blogger"
+    redirect "/"
   end
 
-  post '/Ruby006_Blogger/author' do
+  post '/author' do
     user_input = params[:author_name].split.map(&:capitalize).join(" ")
     @author = Author.where("name LIKE (?)","%#{user_input}%")
     if @author.first.nil?
-      redirect "/Ruby006_Blogger/author/0"
+      redirect "/author/0"
     else
-      redirect "/Ruby006_Blogger/author/#{@author.first.id}"
+      redirect "/author/#{@author.first.id}"
     end
   end
 
-  get '/Ruby006_Blogger/author/0' do
+  get '/author/0' do
     @entries = Entry.all
     @authors = Author.all
     @todays_authors = BLOG_SCHEDULE[Date.today.strftime('%m/%d/%Y')]
@@ -49,7 +45,7 @@ class BlogsController < ApplicationController
     erb :"/bad_input"
   end
 
-  get '/Ruby006_Blogger/author/:id' do
+  get '/author/:id' do
     @author = Author.find(params[:id])
     erb :"/author_show"
   end

@@ -13,11 +13,15 @@ class BlogsController < ApplicationController
   end
 
   get '/Ruby006_Blogger/all' do
-    BlogParser.call
     @entries = Entry.all
     @day = Date.today
     @first_day = Date.parse('2014-10-05')
     erb :"/date_index"
+  end
+
+  post '/Ruby006_Blogger/all' do
+    BlogParser.call
+    redirect "/Ruby006_Blogger/all"
   end
 
   post '/Ruby006_Blogger/author' do

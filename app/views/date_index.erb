@@ -7,7 +7,7 @@
   <h3><%= @day.strftime('%a %b %dth, %Y') %></h3>
   <ol>
     <% @entries.collect do |entry| %>
-      <% if entry.date == @day %>
+      <% if entry.date.to_date == @day %>
         <li><strong>"<a href="<%= entry.url %>" target="_blank"><%= entry.title %></a>"</strong> - by <a href="/Ruby006_Blogger/author/<%= entry.author.id %>"><%= entry.author.name %></a></li>
       <% end %>
     <% end %>

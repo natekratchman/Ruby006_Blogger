@@ -67,5 +67,5 @@ class BlogParser
     end
   end 
 
-  BlogParser.call
+  #BlogParser.call
 end

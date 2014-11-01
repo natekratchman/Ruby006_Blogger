@@ -1,10 +1,12 @@
+<%= erb :"layout/_style.html" %>
+
+<body>
+
 <a href="/">Home</a><br>
 <h1>Ruby006 Blogger</h1>
-<label>Last Updated: <%= Update.last.update_time.strftime('%Y-%m-%d %H:%M:%S') %></label><form action="/all" method="post">
-  <input type="submit" value="fetch new posts"></form>
 
 <% while @day > @first_day do %>
-  <h3><%= @day.strftime('%a %b %dth, %Y') %></h3>
+  <h3><%= @day.strftime('%a %b %d, %Y') %></h3>
   <ol>
     <% @entries.collect do |entry| %>
       <% if entry.date.to_date == @day %>
@@ -14,3 +16,10 @@
   </ol>
   <% @day -= 1 %>
 <% end %>
+
+<p class="update_p">Last Updated: <%= Update.last.update_time.strftime('%Y-%m-%d %H:%M:%S') %></p>
+<form action="/all" method="post">
+  <input class="myButton update_button" type="submit" value="fetch new posts">
+</form>
+
+</body>

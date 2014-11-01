@@ -64,69 +64,25 @@ body {
   position:relative;
   top:1px;
 }
-.search_form {
+/*.search_form {
   position: relative;
   left: 41%;
   padding-top: 30px;
-}
-.search_box {
-/*text-align: center;*/
+}*/
+/*.search_box {
+text-align: center;
+}*/
+.update_div {
+margin: 0 auto;
 }
 .update_p {
   padding-top: 30px;
   font-size: 13px;
 }
-#fetch_button {
+.update_button {
   position: relative;
-  left: 41%;
+  left: 42%;
   top: 8px;
   font-size: 12px;
 }
 </style>
-
-<body>
-<h1>Ruby006 Blogger</h1>
-
-<h3>Today - <%= Date.today.strftime('%a %b %d, %Y') %></h3>
-<ol>
-  <% if @todays_authors.nil? %>
-    <p>No blog posts today :(</p>
-  <% else %>
-    <% @authors.collect do |author| %>
-      <% if @todays_authors.include?(author.name) %>
-        <% last_entry = author.entries.limit(1).order("date DESC").first %>
-        <% if !last_entry.nil? %>
-          <li><strong>"<a href="<%= last_entry.url %>" target="_blank"><%= last_entry.title %></a>"</strong> - by <a href="/author/<%= author.id %>"><%= author.name %></a></li>
-        <% end %>
-      <% end %>
-    <% end %>
-  <% end %>
-</ol>
-
-<h3>Yesterday - <%= (Date.today-1).strftime('%a %b %d, %Y') %></h3>
-<ol>
-  <% if @yesterdays_authors.nil? %>
-    <p>No blog posts today :(</p>
-  <% else %>
-    <% @authors.collect do |author| %>
-      <% if @yesterdays_authors.include?(author.name) %>
-        <% last_entry = author.entries.limit(1).order("date DESC").first %>
-        <% if !last_entry.nil? %>
-          <li><strong>"<a href="<%= last_entry.url %>" target="_blank"><%= last_entry.title %></a>"</strong> - by <a href="/author/<%= author.id %>"><%= author.name %></a></li>
-        <% end %>
-      <% end %>
-    <% end %>
-  <% end %>
-</ol>
-
-<h4><a href="/all">View All Posts</a></h4>
-
-<!-- <form action="/author" method="post" class="search_form">
-  <input type="text" name="author_name" placeholder="search by author" class="search_box">
-  <input type="submit" value="search" class="myButton">
-</form> -->
-<p style="color:red">I didn't catch that. Please enter a valid author name.</p>
-
-<p class="update_p">Last Updated: <%= Update.last.update_time.strftime('%Y-%m-%d %H:%M:%S') %></p><form action="/" method="post">
-  <input class="myButton" id="fetch_button" type="submit" value="fetch new posts"></form>
-</body>

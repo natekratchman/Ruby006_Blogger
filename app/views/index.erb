@@ -11,7 +11,7 @@
       <% if @todays_authors.include?(author.name) %>
         <% last_entry = author.entries.limit(1).order("date DESC").first %>
         <% if !last_entry.nil? %>
-          <li><strong>"<a href="<%= last_entry.url %>" target="_blank"><%= last_entry.title %></a>"</strong> - by <a href="/Ruby006_Blogger/author/<%= author.id %>"><%= author.name %></a></li>
+          <li><strong>"<a href="<%= last_entry.url %>" target="_blank"><%= last_entry.title %></a>"</strong> - by <a href="/author/<%= author.id %>"><%= author.name %></a></li>
         <% end %>
       <% end %>
     <% end %>
@@ -27,15 +27,15 @@
       <% if @yesterdays_authors.include?(author.name) %>
         <% last_entry = author.entries.limit(1).order("date DESC").first %>
         <% if !last_entry.nil? %>
-          <li><strong>"<a href="<%= last_entry.url %>" target="_blank"><%= last_entry.title %></a>"</strong> - by <a href="/Ruby006_Blogger/author/<%= author.id %>"><%= author.name %></a></li>
+          <li><strong>"<a href="<%= last_entry.url %>" target="_blank"><%= last_entry.title %></a>"</strong> - by <a href="/author/<%= author.id %>"><%= author.name %></a></li>
         <% end %>
       <% end %>
     <% end %>
   <% end %>
 </ol>
 
-<h4><a href="/Ruby006_Blogger/all">View All Posts</a></h4>
-<form action="/Ruby006_Blogger/author" method="post">
+<h4><a href="/all">View All Posts</a></h4>
+<form action="/author" method="post">
   <input type="text" name="author_name" placeholder="search by author">
   <input type="submit" value="search">
 </form>

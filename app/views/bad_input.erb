@@ -1,4 +1,6 @@
 <h1>Ruby006 Blogger</h1>
+<label>Last Updated: <%= Update.last.update_time.getlocal.strftime('%Y-%m-%d %H:%M:%S') %></label><form action="/" method="post">
+  <input type="submit" value="fetch new posts"></form>
 
 <h3>Today - <%= Date.today.strftime('%a %b %dth, %Y') %></h3>
 <ol>
@@ -8,7 +10,9 @@
     <% @authors.collect do |author| %>
       <% if @todays_authors.include?(author.name) %>
         <% last_entry = author.entries.limit(1).order("date DESC").first %>
-        <li><strong>"<a href="<%= last_entry.url %>" target="_blank"><%= last_entry.title %></a>"</strong> - by <a href="/Ruby006_Blogger/author/<%= author.id %>"><%= author.name %></a></li>
+        <% if !last_entry.nil? %>
+          <li><strong>"<a href="<%= last_entry.url %>" target="_blank"><%= last_entry.title %></a>"</strong> - by <a href="/author/<%= author.id %>"><%= author.name %></a></li>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
@@ -22,14 +26,16 @@
     <% @authors.collect do |author| %>
       <% if @yesterdays_authors.include?(author.name) %>
         <% last_entry = author.entries.limit(1).order("date DESC").first %>
-        <li><strong>"<a href="<%= last_entry.url %>" target="_blank"><%= last_entry.title %></a>"</strong> - by <a href="/Ruby006_Blogger/author/<%= author.id %>"><%= author.name %></a></li>
+        <% if !last_entry.nil? %>
+          <li><strong>"<a href="<%= last_entry.url %>" target="_blank"><%= last_entry.title %></a>"</strong> - by <a href="/author/<%= author.id %>"><%= author.name %></a></li>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
 </ol>
 
-<h4><a href="/Ruby006_Blogger/all">View All Posts</a></h4>
-<form action="/Ruby006_Blogger/author" method="post">
+<h4><a href="/all">View All Posts</a></h4>
+<form action="/author" method="post">
   <input type="text" name="author_name" placeholder="search by author">
   <input type="submit" value="search">
 </form>

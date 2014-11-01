@@ -17,13 +17,15 @@ class BlogsController < ApplicationController
 
   post '/all' do
     BlogParser.call
-    Update.create(update_time: Time.now)
+    Time.zone = 'Eastern Time (US & Canada)'
+    Update.create(update_time: Time.zone.now)
     redirect "/all"
   end
 
   post '/' do
     BlogParser.call
-    Update.create(update_time: Time.now)
+    Time.zone = 'Eastern Time (US & Canada)'
+    Update.create(update_time: Time.zone.now)
     redirect "/"
   end
 

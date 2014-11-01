@@ -1,6 +1,6 @@
 <a href="/">Home</a><br>
 <h1>Ruby006 Blogger</h1>
-<label>Last Updated: <%= Update.last.update_time.getlocal %></label><form action="/all" method="post">
+<label>Last Updated: <%= Update.last.update_time.strftime('%Y-%m-%d %H:%M:%S') %></label><form action="/all" method="post">
   <input type="submit" value="fetch new posts"></form>
 
 <% while @day > @first_day do %>

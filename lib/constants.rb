@@ -26,6 +26,7 @@
   "Don Allison" => { "url" => "http://doneallison.com/atom.xml", "platform" => "github" },
   "Kevin Hylant" => { "url" => "http://kevinhylant.github.io/atom.xml", "platform" => "github" },
   "Kana Abe" => { "url" => "http://blog.kanaabe.com/atom.xml", "platform" => "github" },
+  "Karim Butt" => { "url" => "http://karimbutt.github.io/atom.xml", "platform" => "github" },
   "Sofia Ma" => { "url" => "https://eatsleepcoderepeat.ghost.io/rss/", "platform" => "ghost" },
   "Blake Deboer" => { "url" => "https://blakedeboer.ghost.io/author/blake-deboer/rss/", "platform" => "ghost" },
   "Shivani Tiwari" => { "url" => "http://shivanipandey87.ghost.io/rss/", "platform" => "ghost" },
@@ -41,7 +42,6 @@
   NOT_SETUP = 
   {
     "Julie Carter" => { "url" => "http://juliecarter.github.io/atom.xml", "platform" => "github" },
-    "Karim Butt" => { "url" => "http://karimbutt.github.io/atom.xml", "platform" => "github" }
   }
   
   STILL_MISSING = 

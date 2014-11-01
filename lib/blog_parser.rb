@@ -1,12 +1,11 @@
 class BlogParser
 
-  def self.call(day = nil)
+  def self.call
     RSS_URLS.each do |author, author_hash|
       Author.create(name: author) if Author.find_by(name: author).nil?
       
       blog_url = author_hash["url"]
       blog_platform = author_hash["platform"]
-
       if blog_platform == "home"
         self.create_home_entries(author, blog_url)
       else
@@ -66,5 +65,4 @@ class BlogParser
     end
   end 
 
-  #BlogParser.call
 end

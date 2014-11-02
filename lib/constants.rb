@@ -29,7 +29,6 @@
   "Karim Butt" => { "url" => "http://karimbutt.github.io/atom.xml", "platform" => "github" },
   "Sofia Ma" => { "url" => "https://eatsleepcoderepeat.ghost.io/rss/", "platform" => "ghost" },
   "Blake Deboer" => { "url" => "https://blakedeboer.ghost.io/author/blake-deboer/rss/", "platform" => "ghost" },
-  "Shivani Tiwari" => { "url" => "http://shivanipandey87.ghost.io/rss/", "platform" => "ghost" },
   "Sam Tran" => { "url" => "https://samvantran.github.io", "platform" => "home" },
   "Molly Gingras" => { "url" => "http://molgin.github.io", "platform" => "home" },
   "Jimmy Kuruvilla" => { "url" => "http://jimmykuruvilla.github.io", "platform" => "home" },
@@ -41,7 +40,8 @@
 
   NOT_SETUP = 
   {
-    "Julie Carter" => { "url" => "http://juliecarter.github.io/atom.xml", "platform" => "github" },
+  "Shivani Tiwari" => { "url" => "http://shivanipandey87.ghost.io/rss/", "platform" => "ghost" },
+  "Julie Carter" => { "url" => "http://juliecarter.github.io/atom.xml", "platform" => "github" }
   }
   
   STILL_MISSING = 

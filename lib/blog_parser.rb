@@ -25,7 +25,7 @@ class BlogParser
       days_authors = BLOG_SCHEDULE[day.strftime('%m/%d/%Y')]
       if !days_authors.nil? && days_authors.include?(author)
         entry_date = day.to_date
-        if Entry.find_by(date: entry_date).nil?
+        if Entry.find_by(date: entry_date, author_id: (Author.find_by(name: author).id)).nil?
           entry_title = "visit blog home page"
           entry_url = blog_url
           author_id = Author.find_by(name: author).id

@@ -51,11 +51,11 @@
 
 
 BLOG_SCHEDULE = 
-  {"10/7/2014" => ["Tom Cohenno", "Ben Gross", "Molly Gingras", "Draisy Sabel"],
+  {"10/07/2014" => ["Tom Cohenno", "Ben Gross", "Molly Gingras", "Draisy Sabel"],
 
-  "10/8/2014" => ["Robyn Trovati", "Fabio Kume", "Sam Tran"],
+  "10/08/2014" => ["Robyn Trovati", "Fabio Kume", "Sam Tran"],
 
-  "10/9/2014" => ["Sam Marcus", "Julie Carter", "Rose Weixel", "Kevin Hylant"],
+  "10/09/2014" => ["Sam Marcus", "Julie Carter", "Rose Weixel", "Kevin Hylant"],
 
   "10/10/2014" => ["Matthew Fairbank", "Chelsea Guster", "Joe Cardarelli", "Sofia Ma"],
 
@@ -89,15 +89,15 @@ BLOG_SCHEDULE =
 
   "10/31/2014" => ["Jarret Moses", "Jimmy Kuruvilla", "Kana Abe", "Vaidehi Joshi"],
 
-  "11/3/2014" => ["Julia Zhang", "Elizabeth Wolensky", "Allie Shane", "Blake Deboer"],
+  "11/03/2014" => ["Julia Zhang", "Elizabeth Wolensky", "Allie Shane", "Blake Deboer"],
 
-  "11/4/2014" => ["Don Allison", "Rodrigo Figueroa", "Tom Cohenno", "Ben Gross"],
+  "11/04/2014" => ["Don Allison", "Rodrigo Figueroa", "Tom Cohenno", "Ben Gross"],
 
-  "11/5/2014" => ["Molly Gingras", "Draisy Sabel", "Robyn Trovati", "Fabio Kume"],
+  "11/05/2014" => ["Molly Gingras", "Draisy Sabel", "Robyn Trovati", "Fabio Kume"],
 
-  "11/6/2014" => ["Sam Tran", "Sam Marcus", "Julie Carter"],
+  "11/06/2014" => ["Sam Tran", "Sam Marcus", "Julie Carter"],
 
-  "11/7/2014" => ["Rose Weixel", "Kevin Hylant", "Matthew Fairbank", "Chelsea Guster"],
+  "11/07/2014" => ["Rose Weixel", "Kevin Hylant", "Matthew Fairbank", "Chelsea Guster"],
 
   "11/10/2014" => ["Joe Cardarelli", "Sofia Ma", "Cassie Tarakajian", "Danielle Cohen Shohet"],
 
@@ -129,19 +129,19 @@ BLOG_SCHEDULE =
 
   "11/28/2014" => ["Brianne King", "Karim Butt", "Jarret Moses", "Jimmy Kuruvilla"],
 
-  "12/1/2014" => ["Kana Abe", "Vaidehi Joshi", "Julia Zhang", "Elizabeth Wolensky"],
+  "12/01/2014" => ["Kana Abe", "Vaidehi Joshi", "Julia Zhang", "Elizabeth Wolensky"],
 
-  "12/2/2014" => ["Allie Shane", "Blake Deboer", "Don Allison", "Rodrigo Figueroa"],
+  "12/02/2014" => ["Allie Shane", "Blake Deboer", "Don Allison", "Rodrigo Figueroa"],
 
-  "12/3/2014" => ["Tom Cohenno", "Ben Gross", "Molly Gingras", "Draisy Sabel"],
+  "12/03/2014" => ["Tom Cohenno", "Ben Gross", "Molly Gingras", "Draisy Sabel"],
 
-  "12/4/2014" => ["Robyn Trovati", "Fabio Kume", "Sam Tran"],
+  "12/04/2014" => ["Robyn Trovati", "Fabio Kume", "Sam Tran"],
 
-  "12/5/2014" => ["Sam Marcus", "Julie Carter", "Rose Weixel", "Kevin Hylant"],
+  "12/05/2014" => ["Sam Marcus", "Julie Carter", "Rose Weixel", "Kevin Hylant"],
 
-  "12/8/2014" => ["Matthew Fairbank", "Chelsea Guster", "Joe Cardarelli", "Sofia Ma"],
+  "12/08/2014" => ["Matthew Fairbank", "Chelsea Guster", "Joe Cardarelli", "Sofia Ma"],
 
-  "12/9/2014" => ["Cassie Tarakajian", "Danielle Cohen Shohet", "Mike Dorfman", "Nate Kratchman"],
+  "12/09/2014" => ["Cassie Tarakajian", "Danielle Cohen Shohet", "Mike Dorfman", "Nate Kratchman"],
 
   "12/10/2014" => ["Ayanthika Motha", "Sarah Stroh", "Amanda Chang"],
 

@@ -5,7 +5,7 @@
 <a href="/">Home</a><br>
 <h1>All posts by <%= @author.name %></h1>
 <ol>
-<% @author.entries.each do |entry| %>
+<% @author.entries.order("date DESC").each do |entry| %>
   <li><a href="<%= entry.url %>" target="_blank"><%= entry.title %></a> - <%= entry.date.to_formatted_s(:long_ordinal)[0..-7] %></li>
 <% end %>
 </ol>

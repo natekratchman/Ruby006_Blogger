@@ -4,25 +4,19 @@
 <h1>Ruby006 Blogger</h1>
 
 <h3>Today - <%= Date.today.strftime('%a %b %d, %Y') %></h3>
-<!-- <ol> -->
-  <%# if @todays_authors.nil? %>
-    <!-- <p>No blog posts today :(</p> -->
-  <%# else %>
-    <%# @authors.collect do |author| %>
-      <%# if @todays_authors.include?(author.name) %>
-        <%# last_entry = author.entries.limit(1).order("date DESC").first %>
-        <%# if !last_entry.nil? %>
-          <!-- <li><strong>"<a href="<%= last_entry.url %>" target="_blank"><%= last_entry.title %></a>"</strong> - by <a href="/author/<%= author.id %>"><%= author.name %></a></li> -->
-        <%# end %>
-      <%# end %>
-    <%# end %>
-  <%# end %>
-<!-- </ol> -->
 <ol>
-  <li><strong>"<a href="https://medium.com/@tomcohenno/activerecord-gotchas-4c00e4b3aed" target="_blank">ActiveRecord gotchas</a>"</strong> - by <a href="/author/1">Tom Cohenno</a></li>
-  <li><strong>"<a href="http://benjagross.github.io/blog/2014/11/03/sublime-organization/" target="_blank">Sublime Organization</a>"</strong> - by <a href="/author/2">Ben Gross</a></li>
-  <li><strong>"<a href="http://doneallison.github.io/blog/2014/11/03/my-first-web-app-topicana/" target="_blank">My First Web App: Topicana</a>"</strong> - by <a href="/author/24">Don Allison</a></li>
-  <li><strong>"<a href="http://rodrigo-figueroa.bitballoon.com/2014/11/04/joins-with-merge" target="_blank">Joins with Merge</a>"</strong> - by <a href="/author/34">Rodrigo Figueroa</a></li>
+  <% if @todays_authors.nil? %>
+    <!-- <p>No blog posts today :(</p> -->
+  <% else %>
+    <% @authors.collect do |author| %>
+      <% if @todays_authors.include?(author.name) %>
+        <% last_entry = author.entries.limit(1).order("date DESC").first %>
+        <% if !last_entry.nil? %>
+          <li><strong>"<a href="<%= last_entry.url %>" target="_blank"><%= last_entry.title %></a>"</strong> - by <a href="/author/<%= author.id %>"><%= author.name %></a></li>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
 </ol>
 
 

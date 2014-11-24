@@ -1,7 +1,6 @@
 class BlogsController < ApplicationController
   
   get '/' do 
-    @entries = Entry.all.where("name is not null")
     @authors = Author.all
     @todays_authors = BLOG_SCHEDULE[Date.today.strftime('%m/%d/%Y')]
     @yesterdays_authors = BLOG_SCHEDULE[(Date.today-1).strftime('%m/%d/%Y')]

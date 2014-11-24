@@ -9,7 +9,7 @@ class BlogParser
       if blog_platform == "home"
         self.create_home_entries(author, blog_url)
       else
-        rss_hash = self.get_hash(blog_url) 
+        rss_hash = self.get_hash(blog_url)
         self.create_entries(author, rss_hash, blog_platform)
       end
     end

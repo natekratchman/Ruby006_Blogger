@@ -6,7 +6,7 @@
 <h3>Today - <%= Date.today.strftime('%a %b %d, %Y') %></h3>
 <ol>
   <% if @todays_authors.nil? %>
-    <!-- <p>No blog posts today :(</p> -->
+    <p>No blog posts today :(</p>
   <% else %>
     <% @authors.collect do |author| %>
       <% if @todays_authors.include?(author.name) %>

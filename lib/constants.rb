@@ -27,7 +27,7 @@
   "Karim Butt" => { "url" => "http://karimbutt.github.io/atom.xml", "platform" => "github" },
   "Sofia Ma" => { "url" => "https://eatsleepcoderepeat.ghost.io/rss/", "platform" => "ghost" },
   "Blake Deboer" => { "url" => "https://blakedeboer.ghost.io/author/blake-deboer/rss/", "platform" => "ghost" },
-  "Cassie Tarakajian" => { "url" => "http://catarak.github.io/atom.xml", "platform" => "home" },
+  "Cassie Tarakajian" => { "url" => "http://catarak.github.io", "platform" => "home" },
   "Jarret Moses" => { "url" => "http://jmoses89.github.io", "platform" => "home" },
   "Sam Tran" => { "url" => "https://samvantran.github.io", "platform" => "home" },
   "Molly Gingras" => { "url" => "http://molgin.github.io", "platform" => "home" },
